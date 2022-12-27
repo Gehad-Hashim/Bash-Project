@@ -29,21 +29,21 @@ createDB)
     read -p "enter name of database:" DBname
 
 # check regex
-reg=[^[a-z][A-Z]_]*];
+reg=[[^[a-zA-Z]]];
 if [[ $DBname =~ $reg ]] ;then
     echo "valid"
     ls
     # check exist 
 
     if [ -d $DBname ] ;then    # ./
-        echo "welcome back to your database " "named " $DBname ":)"
-        cd $DBname;
+        echo "already exist database " "named " $DBname ":)"
+        # cd $DBname;
         pwd
     else
         echo "welcome first time"
         mkdir ./$DBname;
         ls
-        cd $DBname
+        # cd $DBname
     fi
 else
 echo "out"
@@ -65,11 +65,42 @@ listDB)
     echo "list pressed"
     ls 
 ;;
+
 connectToDB)
     echo "connect pressed"
+    . connect.sh
 ;;
+
+
+
+
+
 dropDB)
+    pwd
     echo "drop pressed"
+    read -p "enter database name that you need to drop" DBname
+    reg=[[^[a-zA-Z]]];
+if [[ $DBname =~ $reg ]] ;then
+    echo "valid name" #cd
+    # check exist 
+
+    if [ -d $DBname ] ;then    # ./
+        echo $DBname "will be removed"
+        rm -r $DBname
+        #cd$DBname;
+        #pwd
+    else
+        echo "there is no database with the same name"
+        
+        
+        #cd $DBname
+    fi
+else
+echo "try another name"
+
+
+
+fi
 ;;
 exit)
     break
