@@ -43,20 +43,20 @@ touch $tName;
 
 # ---------------------- elmohma elsa3baaaaaa
 
-read -p "enter no. of columns" nColmns
+read -p "enter no. of columns :" nColmns
 typeset i;
 for (( i=0; i<$nColmns; i++ ))
 do
 # if this first column enter primary
 if (( i==0 )); then
-read -p "enter primay column" nColmn ;
+read -p "enter primay column :" nColmn ;
 
-read -p "int or string?" dtype ;
- echo -n "$nColmn-\b$dtype:\b">>student;
+read -p "int or string? " dtype ;
+ echo -n "$nColmn-$dtype:">>$tName;
 fi
-read -p "enter name column" nColmn;
-read -p "int or string?" dtype ;
-echo "$nColmn-$dtype">>student;
+read -p "enter name column :" nColmn;
+read -p "int or string? " dtype ;
+echo "$nColmn-$dtype:">>$tName;
 
 
 
@@ -99,12 +99,15 @@ fi
 
 selectFromTable )
     echo "select from Table pressed"
-    nano student
+    read  -p "enter table name to select from it :" ftable
+    nano $ftable
 ;;
 
 updateTable )
     echo "update Table pressed"
-
+    read  -p "enter table name to update it :" ftable
+    nano $ftable
+         
 ;;
 
 goBack )
