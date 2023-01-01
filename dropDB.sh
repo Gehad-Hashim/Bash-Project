@@ -3,9 +3,11 @@
  pwd
     echo "drop pressed"
     read -p "enter database name that you need to drop" DBname
-    reg=[[^[a-zA-Z]]];
-if [[ $DBname == "nn" ]] ;then
-    echo "valid name" #cd
+
+
+if [[ $DBname =~ ^[a-zA-Z_]+$ ]] ;then
+    echo "valid name" 
+ #cd
     # check exist 
 
     if [ -d $DBname ] ;then    # ./
@@ -22,8 +24,9 @@ if [[ $DBname == "nn" ]] ;then
 else
 echo "try another name"
 
-
-
 fi
+
+
+
  }
  dropDB #call

@@ -5,8 +5,8 @@
     read -p "enter name of database:" DBname
 
 # check regex
-reg=[[^[a-zA-Z]]];
-if [[ $DBname == nn ]] ;then
+
+if [[ $DBname =~ ^[a-zA-Z_]+$ ]] ;then
     echo "valid"
     ls
     # check exist 

@@ -19,7 +19,7 @@ fi
 echo -n "your path now is " ;pwd
 
 # we are in DBMS folder
-echo "you can create , list ,...... DB"
+echo "you can create , list ,connect and drop DataBases :) "
 
 select choice in createDB listDB connectToDB dropDB exit
 do
