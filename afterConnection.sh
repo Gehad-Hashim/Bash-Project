@@ -1,4 +1,9 @@
 
+export LC_COLLATE=C;
+shopt -s extglob;
+
+
+
 select choiceInTable in createTable listTables insertToTable dropTable selectFromTable deleteFromTable updateTable diconnect
 do
 case $choiceInTable in
@@ -30,7 +35,7 @@ deleteFromTable )
 ;;
 #----------------------------------------------------------------------------------------------------update table ------------------------------------------------------
 updateTable )
-   
+   . updateTable.sh
 ;;
 
 diconnect )
