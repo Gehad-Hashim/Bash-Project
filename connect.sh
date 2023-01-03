@@ -11,7 +11,8 @@ if [[ $DBname =~ ^[a-zA-Z]+$ ]] ;then
         cd $DBname
     echo "we are in " ;pwd ;
     echo "now you are connected to " $DBname
-
+      
+       . afterConnection.sh
     else
         echo "not exist"
         
@@ -21,7 +22,7 @@ echo "try another name"
 fi
 
 # -------------------------now connection successful ---------------
- . afterConnection.sh
+ #. afterConnection.sh
 
 
  
