@@ -1,14 +1,12 @@
- #export $DBname
  creatDB()
  {
- # echo "creat pressed"
     read -p "enter name of database:" DBname
 
 # check regex
 
 if [[ $DBname =~ ^[a-zA-Z]+$ ]] ;then
     echo "valid"
-    ls
+    # ls
     # check exist 
 
     if [ -d $DBname ] ;then    # ./
@@ -18,23 +16,11 @@ if [[ $DBname =~ ^[a-zA-Z]+$ ]] ;then
     else
         echo "welcome first time"
         mkdir ./$DBname;
-        ls
+        # ls
         # cd $DBname
     fi
 else
 echo "out"
-
-
-
-
-
-
-
-
-
-
 fi
-
- 
  }
  creatDB #call

@@ -39,13 +39,11 @@ updateTable )
 ;;
 
 diconnect )
-    . shell-project.sh
+     break;
+     . shell-project.sh  
    ;;
 * )
     echo "enter valid number"
 ;;
 esac
-done
-
-
 done

@@ -10,7 +10,7 @@ if [[ $ftable =~ ^[a-zA-Z]+$ ]] ;then
     if [ -f $ftable ] ;then  # ./   ~/DBMS/$DBname/$tName
       echo "valid, you can select now "
       
-           select Ychoice  in "Select all meta+data" "Selection by Id" "Select column using id (projection) " "Selection by column name" "Selection data" "back in table Choices" 
+           select Ychoice  in "Select all meta+data" "Selection by Id" "Select column using id (projection) " "Selection by column name" "Selection data" "back to table Choices" 
             do
             case $Ychoice in
             
@@ -27,11 +27,11 @@ if [[ $ftable =~ ^[a-zA-Z]+$ ]] ;then
 
            "Select column using id (projection) " )
                  read -p "Enter Your Id to get the information : " IdChoice
-                       echo -n "meta data of $ftable table are " ":)";
+                       echo -n "meta data of $ftable table are ";
 
                         head -1 $ftable ;
                        
-                       read -p "Enter column  number():" columnNumber
+                       read -p "Enter column  number:" columnNumber
                        
                      sed -n /^$IdChoice:/p $ftable | cut -d: -f$columnNumber 
                        
@@ -45,11 +45,12 @@ if [[ $ftable =~ ^[a-zA-Z]+$ ]] ;then
 
             "Selection by column name" )
                      #   read -p "Enter Your Id to get the information : " IdChoice
-                       echo -n "meta data of $ftable table are " ":)";
+                       echo -n "meta data of $ftable table are " ;
 
                         head -1 $ftable ;
-                       
-                       read -p "Enter column  number():" columnNumber
+                     
+
+                       read -p "Enter column  number:" columnNumber
                        
                      #   sed -n /^$IdChoice:/p $ftable |
                        cut -d: -f$columnNumber $ftable
@@ -59,8 +60,9 @@ if [[ $ftable =~ ^[a-zA-Z]+$ ]] ;then
                 sed -n '3,$p' $ftable
              ;;
             ###########################
-            "back in table Choices" )
-            . afterConnection.sh
+            "back to table Choices" )
+            #  break;
+            . afterConnection.sh ;
             ;;
             esac
             done

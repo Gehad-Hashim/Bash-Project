@@ -40,4 +40,3 @@ else
 echo "try another name"
 
 fi
-

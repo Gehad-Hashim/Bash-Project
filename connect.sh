@@ -21,8 +21,5 @@ else
 echo "try another name"
 fi
 
-# -------------------------now connection successful ---------------
- #. afterConnection.sh
-
 
  
